@@ -1,0 +1,17 @@
+resource "kubernetes_service" "test" {
+  metadata {
+    name      = "nginx"
+    namespace = kubernetes_namespace.test.metadata.0.name
+  }
+  spec {
+    selector = {
+      app = kubernetes_deployment.test.spec.0.template.0.metadata.0.labels.app
+    }
+    type = "NodePort"
+    port {
+      node_port   = 30201
+      port        = 80
+      target_port = 80
+    }
+  }
+}
