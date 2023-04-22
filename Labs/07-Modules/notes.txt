@@ -1,0 +1,1 @@
+echo 'split(",", "foo,bar,baz")' | terraform console

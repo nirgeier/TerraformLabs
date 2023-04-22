@@ -1,0 +1,5 @@
+###
+### !!! There is "kubernetes2" provider (2023)
+### Not a valid tf file
+### 
+provider "kubernetes2" {}
