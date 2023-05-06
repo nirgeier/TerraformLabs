@@ -4,6 +4,11 @@ locals {
   secret_key     = "xxx"
 }
 
+variable "s3_bucket_name" {
+  type    = string
+  default = "a"
+}
+
 ###
 ### terraform init -reconfigure
 ###

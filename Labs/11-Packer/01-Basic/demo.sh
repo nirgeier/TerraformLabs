@@ -15,8 +15,8 @@ mkdir packer_tutorial
 # Navigate into the directory.
 cd packer_tutorial
 
-# Create a file docker-ubuntu.pkr.hcl.
-cat << EOF > ./docker-ubuntu.pkr.hcl
+# Create a file docker-alpine.pkr.hcl.
+cat << EOF > ./docker-alpine.pkr.hcl
 packer {
   required_plugins {
     docker = {
@@ -29,7 +29,7 @@ packer {
 ##
 ##  Builder from type docker
 ##
-source "docker" "ubuntu" {
+source "docker" "alpine" {
   image  = "alpine"
   commit = true
 }
@@ -40,7 +40,7 @@ source "docker" "ubuntu" {
 build {
   name    = "labs-packer"
   sources = [
-    "source.docker.ubuntu"
+    "source.docker.alpine"
   ]
 }
 EOF
@@ -54,4 +54,4 @@ packer fmt .
 packer validate .
 
 # Build the docker dontainer
-packer build docker-ubuntu.pkr.hcl
+packer build docker-alpine.pkr.hcl

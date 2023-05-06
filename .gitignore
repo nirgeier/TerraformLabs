@@ -66,3 +66,5 @@ links.txt
 
 # .tfvars files
 *.tfvars
+_creds.txt
+**/.terraform.lock.hcl

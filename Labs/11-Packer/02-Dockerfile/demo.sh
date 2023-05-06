@@ -20,7 +20,7 @@ cat << EOF > ./docker.pkr.hcl
 packer {
   required_plugins {
     docker = {
-      version = ">= 0.0.7"
+      version = ">= 1.0.1"
       source = "github.com/hashicorp/docker"
     }
   }
